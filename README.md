@@ -9,8 +9,8 @@ Use it as you like :)
 # Screenshots
 
 Before Curve Fitting
-![Before CurveFit](https://github.com/pppoe/Sample-CurveFit/blob/master/screenshots/nofit.png)
+![Before CurveFit](https://github.com/pppoe/Sample-CurveFit/raw/master/screenshots/nofit.png)
 
 After Curve Fitting
-![After CurveFit](https://github.com/pppoe/Sample-CurveFit/blob/master/screenshots/dofit.png)
+![After CurveFit](https://github.com/pppoe/Sample-CurveFit/raw/master/screenshots/dofit.png)
 
