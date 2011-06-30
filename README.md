@@ -21,5 +21,5 @@ Use it as you want :)
 ![Before Bezier](https://github.com/pppoe/Sample-CurveFit/raw/master/screenshots/nobezier.png)
 
 ## After Bezier Spline Curve Fitting
-![After Bezier](https://github.com/pppoe/Sample-CurveFit/raw/master/screenshots/bezier.png)
+![After Bezier](https://github.com/pppoe/Sample-CurveFit/raw/master/screenshots/dobezier.png)
 
