@@ -8,6 +8,7 @@
 
 #import "CurveViewController.h"
 #import "CurveView.h"
+#import "CurveBezierViewController.h"
 
 @implementation CurveViewController
 
@@ -28,32 +29,42 @@
 }
 */
 
-- (void)noCurveFit {
-    curveView.curveFit = NO;
-    [curveView setNeedsDisplay];
+- (void)curveFit {
+    if (!curveView.curveFit)
+    {
+        curveView.curveFit = YES;
+        self.navigationItem.leftBarButtonItem.title = @"NoCurveFit";
+    }
+    else
+    {
+        curveView.curveFit = NO;
+        self.navigationItem.leftBarButtonItem.title = @"CurveFit";
+    }
+    [curveView setNeedsDisplay];        
 }
 
-- (void)doCurveFit {
-    curveView.curveFit = YES;
-    [curveView setNeedsDisplay];
+- (void)bezier {
+    CurveBezierViewController *bezierVC = [[CurveBezierViewController alloc] init];
+    [self.navigationController pushViewController:bezierVC animated:YES];
+    [bezierVC release];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *noFitButton = [[UIBarButtonItem alloc] initWithTitle:@"NoFit"
+    UIBarButtonItem *fitButton = [[UIBarButtonItem alloc] initWithTitle:@"CurveFit"
                                                                     style:UIBarButtonItemStyleBordered
                                                                    target:self
-                                                                   action:@selector(noCurveFit)];
-    self.navigationItem.leftBarButtonItem = noFitButton;
-    [noFitButton release];
+                                                                   action:@selector(curveFit)];
+    self.navigationItem.leftBarButtonItem = fitButton;
+    [fitButton release];
 
-    UIBarButtonItem *doFitButton = [[UIBarButtonItem alloc] initWithTitle:@"DoFit"
+    UIBarButtonItem *bezierButton = [[UIBarButtonItem alloc] initWithTitle:@"Bezier"
                                                                     style:UIBarButtonItemStyleBordered
                                                                    target:self
-                                                                   action:@selector(doCurveFit)];
-    self.navigationItem.rightBarButtonItem = doFitButton;
-    [doFitButton release];
+                                                                   action:@selector(bezier)];
+    self.navigationItem.rightBarButtonItem = bezierButton;
+    [bezierButton release];
     
     curveView = [[CurveView alloc] initWithFrame:self.view.bounds];
     [curveView readPointsFromFileNamed:@"line.txt"];
