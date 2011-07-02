@@ -4,7 +4,7 @@ It uses Cubic Spline Interpolation,
 and Bezier Spline Curve.
 
 If you can read Chinese, you can refer to my blog post <http://haoxiang.org/2011/06/cubic-spline-interpolation-curve-fitting/>
-The One for Bezier will be posted later.
+and <http://haoxiang.org/2011/06/bezier-spline-curve-fit/>
 
 # License
 Use it as you want :)
